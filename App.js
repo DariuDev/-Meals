@@ -1,7 +1,20 @@
 import React from 'react';
-import {StatusBar, SafeAreaView, StyleSheet, View} from 'react-native';
+import {} from 'react-native';
 import {RestaurantsScreen} from './src/features/restaurants/screens/RestaurantsScreen';
+import {useFonts, Oswald_400Regular} from '@expo-google-fonts/oswald';
+import {ThemeProvider} from 'styled-components/native';
+import {theme} from './src/infrastructre/theme';
 
 export default function App() {
-  return <RestaurantsScreen />;
+  const [oswaldLoaded] = useFonts({
+    Oswald_400Regular,
+  });
+  if (!oswaldLoaded) {
+    return null;
+  }
+  return (
+    <ThemeProvider theme={theme}>
+      <RestaurantsScreen />
+    </ThemeProvider>
+  );
 }
