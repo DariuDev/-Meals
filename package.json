@@ -10,13 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@expo-google-fonts/inter": "^0.2.2",
-    "@expo-google-fonts/lato": "^0.2.2",
-    "@expo-google-fonts/oswald": "^0.2.2",
     "expo-font": "^10.0.4",
     "react": "17.0.2",
-    "react-native": "0.67.1",
+    "react-native": "^0.67.2",
     "react-native-paper": "^4.11.2",
+    "react-native-svg": "^12.1.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -25,9 +23,10 @@
     "@react-native-community/eslint-config": "2.0.0",
     "@types/styled-components": "^5.1.21",
     "babel-jest": "26.6.3",
-    "eslint": "7.14.0",
+    "eslint": "^7.32.0",
     "jest": "26.6.3",
     "metro-react-native-babel-preset": "0.66.2",
+    "react-native-svg-transformer": "^1.0.0",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
