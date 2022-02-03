@@ -1,12 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-undef */
 import React from 'react';
-import {Text, View, Image} from 'react-native';
-import styled from 'styled-components/native';
-import {Card} from 'react-native-paper';
+import {Text} from 'react-native';
 import star from '../../../assets/star';
 import open from '../../../assets/open';
-import {SvgXml} from 'react-native-svg';
+import {
+  RestaurantCard,
+  RestaurantCardCover,
+  Title,
+  Section,
+  Rating,
+  Star,
+  SectionEnd,
+  Open,
+  Icon,
+  Address,
+} from './RestaurantStylesComponent';
 
 export const RestaurantsComponent = ({restaurant = {}}) => {
   const {
@@ -29,7 +38,7 @@ export const RestaurantsComponent = ({restaurant = {}}) => {
       <Section>
         <Rating>
           {ratingArray.map(() => (
-            <SvgXml xml={star} width={20} height={20} />
+            <Star xml={star} />
           ))}
         </Rating>
         <SectionEnd>
@@ -38,50 +47,11 @@ export const RestaurantsComponent = ({restaurant = {}}) => {
               CLOSED TEMPORARILY
             </Text>
           )}
-          {isOpenNow && <Open xml={open} width={20} height={20} />}
-          <Image
-            style={{width: 15, height: 15, marginLeft: '5%'}}
-            source={{uri: icon}}
-          />
+          {isOpenNow && <Open xml={open} />}
+          <Icon source={{uri: icon}} />
         </SectionEnd>
       </Section>
       <Address>{address}</Address>
     </RestaurantCard>
   );
 };
-
-const Title = styled(Text)`
-font-family : ${props => props.theme.fonts.body}
-  padding: 2%;
-  color: ${props => props.theme.colors.ui.primary};
-`;
-const Rating = styled(View)`
-  flex-direction: row;
-  padding-left: 3%;
-`;
-const Address = styled(Text)`
-  padding: 2%;
-  color: ${props => props.theme.colors.ui.primary};
-`;
-const RestaurantCard = styled(Card)`
-  background-color: white;
-  margin: 3%;
-`;
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: 3%;
-  background-color: white;
-`;
-const Section = styled(View)`
-  flex-direction: row;
-  align-items: center;
-`;
-const SectionEnd = styled(View)`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 5%;
-`;
-const Open = styled(SvgXml)`
-  flex-direction: row;
-  margin-left: 5%;
-`;

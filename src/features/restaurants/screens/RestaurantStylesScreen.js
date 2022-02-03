@@ -8,6 +8,3 @@ export const SafeArea = styled(SafeAreaView)`
 export const SearchContainer = styled(View)`
   margin: 2%;
 `;
-export const RestaurantListContainer = styled(View)`
-  flex: 1;
-`;

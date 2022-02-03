@@ -1,8 +1,8 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, View} from 'react-native';
-import styled from 'styled-components/native';
+import {FlatList} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import {RestaurantsComponent} from '../components/RestaurantsComponent';
+import {SafeArea, SearchContainer} from './RestaurantStylesScreen';
 
 export const RestaurantsScreen = () => {
   return (
@@ -10,18 +10,10 @@ export const RestaurantsScreen = () => {
       <SearchContainer>
         <Searchbar placeholder={'search'} />
       </SearchContainer>
-      <RestaurantListContainer>
-        <RestaurantsComponent />
-      </RestaurantListContainer>
+      <FlatList
+        data={[{name: 1}, {name: 2}, {name: 3}]}
+        renderItem={() => <RestaurantsComponent />}
+      />
     </SafeArea>
   );
 };
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-`;
-const SearchContainer = styled(View)`
-  margin: 2%;
-`;
-const RestaurantListContainer = styled(View)`
-  flex: 1;
-`;

@@ -18,7 +18,9 @@ export const Address = styled(Text)`
 `;
 export const RestaurantCard = styled(Card)`
   background-color: white;
-  margin: 3%;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-bottom: 3%;
 `;
 export const RestaurantCardCover = styled(Card.Cover)`
   padding: 3%;
