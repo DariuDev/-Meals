@@ -2,7 +2,8 @@ import React from 'react';
 import {FlatList} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import {RestaurantsComponent} from '../components/RestaurantsComponent';
-import {SafeArea, SearchContainer} from './RestaurantStylesScreen';
+import {SearchContainer} from './RestaurantStylesScreen';
+import {SafeArea} from '../../../components/utility/SafeArea';
 
 export const RestaurantsScreen = () => {
   return (
