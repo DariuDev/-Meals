@@ -13,6 +13,7 @@
     "@react-navigation/material-bottom-tabs": "^6.1.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.4.1",
+    "camelize": "^1.0.0",
     "expo-font": "^10.0.4",
     "react": "17.0.2",
     "react-native": "^0.67.2",
