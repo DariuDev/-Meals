@@ -7,16 +7,19 @@ import {SafeArea} from '../../../components/utility/SafeArea';
 import {RestaurantsContext} from '../../../services/restaurants/RestaurantsContext';
 
 export const RestaurantsScreen = () => {
-  const restaurantContext = useContext(RestaurantsContext);
-  console.log(restaurantContext);
+  const {restaurants, isLoading, error} = useContext(RestaurantsContext);
+  console.log(error);
   return (
     <SafeArea>
       <SearchContainer>
         <Searchbar placeholder={'search'} />
       </SearchContainer>
       <FlatList
-        data={restaurantContext.restaurants}
-        renderItem={() => <RestaurantsComponent />}
+        data={restaurants}
+        renderItem={({item}) => {
+          return <RestaurantsComponent restaurant={item} />;
+        }}
+        keyExtractor={item => item.name}
       />
     </SafeArea>
   );
