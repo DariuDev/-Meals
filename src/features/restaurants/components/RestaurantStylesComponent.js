@@ -40,14 +40,14 @@ export const Open = styled(SvgXml)`
   flex-direction: row;
   margin-left: 5%;
   margin-right: 5%;
-  width: 20;
-  height: 20;
+  width: 20px;
+  height: 20px;
 `;
 export const Star = styled(SvgXml)`
-  width: 20;
-  height: 20;
+  width: 20px;
+  height: 20px;
 `;
 export const Icon = styled(Image)`
-  width: 15;
-  height: 15;
+  width: 15px;
+  height: 15px;
 `;
