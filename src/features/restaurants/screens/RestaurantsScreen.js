@@ -1,13 +1,11 @@
 import React, {useContext} from 'react';
 import {FlatList} from 'react-native';
-import {Searchbar, ActivityIndicator} from 'react-native-paper';
+import {ActivityIndicator} from 'react-native-paper';
 import {RestaurantsComponent} from '../components/RestaurantsComponent';
-import {
-  SearchContainer,
-  ActivityIndicatorContainer,
-} from './RestaurantStylesScreen';
+import {ActivityIndicatorContainer} from './RestaurantStylesScreen';
 import {SafeArea} from '../../../components/utility/SafeArea';
 import {RestaurantsContext} from '../../../services/restaurants/RestaurantsContext';
+import {SearchComponent} from '../components/SearchComponent';
 
 export const RestaurantsScreen = () => {
   const {restaurants, isLoading, error} = useContext(RestaurantsContext);
@@ -18,9 +16,7 @@ export const RestaurantsScreen = () => {
           <ActivityIndicator size={50} animating={true} color={'cyan'} />
         </ActivityIndicatorContainer>
       )}
-      <SearchContainer>
-        <Searchbar placeholder={'search'} />
-      </SearchContainer>
+      <SearchComponent />
       <FlatList
         data={restaurants}
         renderItem={({item}) => {
