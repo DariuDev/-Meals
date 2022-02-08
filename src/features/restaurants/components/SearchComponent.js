@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {Searchbar} from 'react-native-paper';
 import {LocationContext} from '../../../services/locations/LocationContext';
 import {SearchContainer} from './SearchStylesComponent';
@@ -6,9 +6,6 @@ import {SearchContainer} from './SearchStylesComponent';
 export const SearchComponent = () => {
   const {keyword, search} = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
-  useEffect(() => {
-    search(searchKeyword);
-  }, []);
 
   return (
     <SearchContainer>
