@@ -27,6 +27,7 @@ export const RestaurantsComponent = ({restaurant = {}}) => {
     address = 'Beryanak,Tehran',
     isOpenNow = true,
     rating = 4,
+    placeId,
     isClosedTemporarily = true,
   } = restaurant;
 
@@ -37,8 +38,8 @@ export const RestaurantsComponent = ({restaurant = {}}) => {
       <Title>{name}</Title>
       <Section>
         <Rating>
-          {ratingArray.map(() => (
-            <Star xml={star} />
+          {ratingArray.map((_, i) => (
+            <Star key={`star-${placeId}-${i}`} xml={star} />
           ))}
         </Rating>
         <SectionEnd>
