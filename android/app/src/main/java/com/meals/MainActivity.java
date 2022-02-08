@@ -16,4 +16,5 @@ protected void onCreate(Bundle savedInstanceState) {
   protected String getMainComponentName() {
     return "Meals";
   }
+  
 }
