@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {NavigationContainer} from '@react-navigation/native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {RestaurantNavigator} from './RestaurantsNavigator';
+import {MapScreen} from '../../features/map/screens.js/MapScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 const Settings = () => (
@@ -38,7 +39,7 @@ export const AppNavigator = () => (
         backgroundColor: '#ffffff',
       })}>
       <Tab.Screen name="Restaurants" component={RestaurantNavigator} />
-      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="Map" component={MapScreen} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   </NavigationContainer>
