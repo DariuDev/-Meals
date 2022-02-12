@@ -1,19 +1,47 @@
-import React from 'react';
-import {Map, PROVIDER_GOOGLE} from './MapStyles';
+import React, {useContext, useEffect, useState} from 'react';
+import {Map, Container} from './MapStyles';
+import {SearchComponent} from '../components.js/SearchComponent';
+import {LocationContext} from '../../../services/locations/LocationContext';
+import {RestaurantsContext} from '../../../services/restaurants/RestaurantsContext';
 import MapView from 'react-native-maps';
 
-export const MapScreen = () => (
-  <Map
-    style={{height: '100%'}}
-    showsUserLocation={true}
-    provider={PROVIDER_GOOGLE}
-    zoomEnabled={true}
-    mapType="standard"
-    initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.015,
-      longitudeDelta: 0.0121,
-    }}
-  />
-);
+export const MapScreen = () => {
+  const {location} = useContext(LocationContext);
+  const {restaurants = []} = useContext(RestaurantsContext);
+
+  const [latDelta, setLatDelta] = useState(0);
+
+  const {viewport, lat, lng} = location;
+  useEffect(() => {
+    const northeastLat = viewport.northeast.lat;
+    const southwestLat = viewport.southwest.lat;
+
+    setLatDelta(northeastLat - southwestLat);
+  }, [location, viewport]);
+  return (
+    <Container>
+      <SearchComponent />
+      <Map
+        mapType="standard"
+        region={{
+          latitude: lat,
+          longitude: lng,
+          latitudeDelta: latDelta,
+          longitudeDelta: 0.02,
+        }}>
+        {restaurants.map(restaurant => {
+          return (
+            <MapView.Marker
+              key={restaurant.name}
+              title={restaurant.name}
+              coordinate={{
+                latitude: restaurant.geometry.location.lat,
+                longitude: restaurant.geometry.location.lng,
+              }}
+            />
+          );
+        })}
+      </Map>
+    </Container>
+  );
+};
