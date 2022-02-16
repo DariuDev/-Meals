@@ -6,7 +6,7 @@ import {RestaurantsContext} from '../../../services/restaurants/RestaurantsConte
 import {MapCallout} from '../components.js/MapCallout';
 import MapView from 'react-native-maps';
 
-export const MapScreen = () => {
+export const MapScreen = ({navigation}) => {
   const {location} = useContext(LocationContext);
   const {restaurants = []} = useContext(RestaurantsContext);
 
@@ -39,7 +39,12 @@ export const MapScreen = () => {
                 latitude: restaurant.geometry.location.lat,
                 longitude: restaurant.geometry.location.lng,
               }}>
-              <MapView.Callout>
+              <MapView.Callout
+                onPress={() =>
+                  navigation.navigate('RestaurantDetailScreen', {
+                    restaurant,
+                  })
+                }>
                 <MapCallout restaurant={restaurant} />
               </MapView.Callout>
             </MapView.Marker>
