@@ -3,6 +3,7 @@ import {Text} from 'react-native';
 import {SafeArea} from '../../components/utility/SafeArea';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {NavigationContainer} from '@react-navigation/native';
+
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {RestaurantNavigator} from './RestaurantsNavigator';
 import {MapScreen} from '../../features/map/screens.js/MapScreen';
@@ -13,11 +14,11 @@ const Settings = () => (
     <Text>Settings</Text>
   </SafeArea>
 );
-const Map = () => (
-  <SafeArea>
-    <Text>Map</Text>
-  </SafeArea>
-);
+// const Map = () => (
+//   <SafeArea>
+//     <Text>Map</Text>
+//   </SafeArea>
+// );
 export const AppNavigator = () => (
   <NavigationContainer>
     <Tab.Navigator
