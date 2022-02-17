@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-undef */
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View} from 'react-native';
 import star from '../../../assets/star';
 import open from '../../../assets/open';
+import {Favourites} from '../../../components/favourites/FavouritesComponent';
 import {
   RestaurantCard,
   RestaurantCardCover,
@@ -34,7 +35,10 @@ export const RestaurantsComponent = ({restaurant = {}}) => {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
   return (
     <RestaurantCard elevation={5}>
-      <RestaurantCardCover key={name} source={{uri: photos[0]}} />
+      <View>
+        <Favourites restaurant={restaurant} />
+        <RestaurantCardCover key={name} source={{uri: photos[0]}} />
+      </View>
       <Title>{name}</Title>
       <Section>
         <Rating>
