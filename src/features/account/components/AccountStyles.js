@@ -9,6 +9,7 @@ export const AccountBackground = styled.ImageBackground.attrs({
   align-items: center;
   justify-content: center;
 `;
+
 export const AccountCover = styled(View)`
   position: absolute;
   height: 100%;
