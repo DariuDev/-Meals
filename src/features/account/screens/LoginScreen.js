@@ -6,6 +6,7 @@ import {
   AccountContainer,
   AuthInput,
   AuthButton,
+  ErrorText,
 } from '../components/AccountStyles';
 import {AuthenticationContext} from '../../../services/authentication/AuthenticationContext';
 
@@ -18,7 +19,7 @@ export const LoginScreen = () => {
       <AccountCover />
       <AccountContainer>
         <AuthInput
-          label="Email"
+          label="E-mail"
           value={email}
           textcontentType="emailAddress"
           keyboardType="email-address"
@@ -34,7 +35,7 @@ export const LoginScreen = () => {
           secure
           onChangeText={p => setPassword(p)}
         />
-        {error && <Text>{error}</Text>}
+        {error && <ErrorText>{error}</ErrorText>}
         <AuthButton
           icon="lock-open-outline"
           mode="contained"
