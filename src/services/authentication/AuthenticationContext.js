@@ -34,10 +34,3 @@ export const AuthenticationContextProvider = ({children}) => {
     </AuthenticationContext.Provider>
   );
 };
-// : async (email, password) => {
-//   try {
-//     await auth().signInWithEmailAndPassword(email, password);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }

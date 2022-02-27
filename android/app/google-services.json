@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "189079164438",
-    "project_id": "meals-341015",
-    "storage_bucket": "meals-341015.appspot.com"
+    "project_number": "1072655501163",
+    "project_id": "meals-cf108",
+    "storage_bucket": "meals-cf108.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:189079164438:android:3e1ab42a13ee1dd85b0737",
+        "mobilesdk_app_id": "1:1072655501163:android:5c69e5edd12045d3aeee2e",
         "android_client_info": {
           "package_name": "com.meals"
         }
       },
       "oauth_client": [
         {
-          "client_id": "189079164438-fnc12vnme3ae8oc4q0bga5imftsf8vbn.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.meals",
-            "certificate_hash": "77fbc5fb22f5380fbf9fa3bd609341b9d2139c79"
-          }
-        },
-        {
-          "client_id": "189079164438-rirhefh7dgtuc5kv8997ha21m72h8fg2.apps.googleusercontent.com",
+          "client_id": "1072655501163-3j1rpj2ne8nnaqmkm4hcpbcv0liiopnk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBlj1z8FTL95qINr30Br1W7Mp68-dggJVw"
+          "current_key": "AIzaSyDfSjT2aGoaly5tZjj6qGQvzdEuNYDJ7IA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "189079164438-rirhefh7dgtuc5kv8997ha21m72h8fg2.apps.googleusercontent.com",
+              "client_id": "1072655501163-3j1rpj2ne8nnaqmkm4hcpbcv0liiopnk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -32,7 +32,7 @@ export const AuthButton = styled(Button).attrs({
 `;
 export const AuthInput = styled(TextInput)`
   height: 60px;
-  width: 350px;
+  width: 250px;
   margin: 1%;
 `;
 export const ErrorText = styled(Text)`
