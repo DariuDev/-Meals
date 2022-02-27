@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import {View} from 'react-native';
-import {Button, TextInput} from 'react-native-paper';
+import {Button, TextInput, Text} from 'react-native-paper';
 
 export const AccountBackground = styled.ImageBackground.attrs({
   source: require('../../../assets/home_bg.jpg'),
@@ -31,7 +31,10 @@ export const AuthButton = styled(Button).attrs({
   padding: 5px;
 `;
 export const AuthInput = styled(TextInput)`
-height: 60px;
-width: 250px;
-margin: 1%;
+  height: 60px;
+  width: 250px;
+  margin: 1%;
+`;
+export const ErrorText = styled(Text)`
+  color: red;
 `;
