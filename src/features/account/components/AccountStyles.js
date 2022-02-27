@@ -27,12 +27,12 @@ export const AuthButton = styled(Button).attrs({
   color: 'blue',
 })`
   margin: 1%;
-  width: 150px;
+  width: 250px;
   padding: 5px;
 `;
 export const AuthInput = styled(TextInput)`
   height: 60px;
-  width: 250px;
+  width: 350px;
   margin: 1%;
 `;
 export const ErrorText = styled(Text)`
