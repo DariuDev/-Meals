@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext, useEffect} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 import auth from '@react-native-firebase/auth';
 import {loginRequest, registerRequest} from './AuthenticationService';
 
@@ -52,8 +52,12 @@ export const AuthenticationContextProvider = ({children}) => {
       });
   };
   const onLogout = async () => {
-    setUser(null);
-    await auth().signOut();
+    await auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        setError(null);
+      });
   };
   return (
     <AuthenticationContext.Provider
