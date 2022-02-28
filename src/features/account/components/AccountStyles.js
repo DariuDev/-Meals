@@ -52,3 +52,10 @@ export const ErrorText = styled(Text)`
   margin: 1%;
   color: red;
 `;
+export const LottieWrapper = styled(View)`
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  top: 30px;
+  padding: 10%;
+`;
