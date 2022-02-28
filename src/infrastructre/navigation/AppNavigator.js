@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React, {useContext} from 'react';
+import {Text, Button} from 'react-native';
 import {SafeArea} from '../../components/utility/SafeArea';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -7,12 +7,19 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import {RestaurantNavigator} from './RestaurantsNavigator';
 import {MapScreen} from '../../features/map/screens.js/MapScreen';
 
+import {AuthenticationContext} from '../../services/authentication/AuthenticationContext';
+
 const Tab = createMaterialBottomTabNavigator();
-const Settings = () => (
-  <SafeArea>
-    <Text>Settings</Text>
-  </SafeArea>
-);
+
+const Settings = () => {
+  const {onLogout} = useContext(AuthenticationContext);
+  return (
+    <SafeArea>
+      <Text>Settings</Text>
+      <Button title="logout" onPress={() => onLogout()} />
+    </SafeArea>
+  );
+};
 // const Map = () => (
 //   <SafeArea>
 //     <Text>Map</Text>
