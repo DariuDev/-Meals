@@ -10,3 +10,9 @@ export const registerRequest = async (email, password, repeatedPassword) => {
     repeatedPassword,
   );
 };
+export const onAuthentiactionStateChange = async user => {
+  await auth().onAuthStateChanged(user);
+};
+export const signOut = async () => {
+  await auth.signOut();
+};
