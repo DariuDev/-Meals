@@ -1,6 +1,7 @@
 import React, {useState, createContext} from 'react';
 import auth from '@react-native-firebase/auth';
-import {loginRequest} from './AuthenticationService';
+import {loginRequest, registerRequest} from './AuthenticationService';
+import {set} from 'react-native-reanimated';
 
 export const AuthenticationContext = createContext();
 
@@ -23,6 +24,22 @@ export const AuthenticationContextProvider = ({children}) => {
         setIsLoading(false);
       });
   };
+  const onRegister = (email, password, repeatedPassword) => {
+    setIsLoading(true);
+    if (password !== repeatedPassword) {
+      setError('password do not match');
+      return;
+    }
+    registerRequest(email, password, repeatedPassword)
+      .then(() => {
+        setUser(email);
+        setIsLoading(false);
+      })
+      .catch(e => {
+        setIsLoading(false);
+        setError(e.toString());
+      });
+  };
   return (
     <AuthenticationContext.Provider
       value={{
@@ -31,6 +48,7 @@ export const AuthenticationContextProvider = ({children}) => {
         isLoading,
         error,
         onLogin,
+        onRegister,
       }}>
       {children}
     </AuthenticationContext.Provider>
