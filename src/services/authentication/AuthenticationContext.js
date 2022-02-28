@@ -9,12 +9,14 @@ export const AuthenticationContextProvider = ({children}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const onLogin = async (email, password) => {
+  const onLogin = (email, password) => {
     setIsLoading(true);
-    await loginRequest(email, password)
-      .then(u => {
-        setUser(u);
+    loginRequest(email, password)
+      .then(() => {
+        setUser(email);
         setIsLoading(false);
+        console.log(email, 'user1');
+        console.log(password, 'password1');
       })
       .catch(e => {
         setError(e.toString());

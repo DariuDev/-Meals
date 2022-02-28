@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {Text} from 'react-native';
 import {
   AccountBackground,
@@ -14,6 +14,7 @@ export const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {onLogin, error} = useContext(AuthenticationContext);
+
   return (
     <AccountBackground>
       <AccountCover />
