@@ -1,16 +1,17 @@
-import React, {useContext, useState, useEffect} from 'react';
-import {Text} from 'react-native';
+import React, {useContext, useState} from 'react';
 import {
   AccountBackground,
   AccountCover,
+  Title,
   AccountContainer,
   AuthInput,
   AuthButton,
   ErrorText,
+  BackButton,
 } from '../components/AccountStyles';
 import {AuthenticationContext} from '../../../services/authentication/AuthenticationContext';
 
-export const LoginScreen = () => {
+export const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {onLogin, error} = useContext(AuthenticationContext);
@@ -18,6 +19,7 @@ export const LoginScreen = () => {
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals</Title>
       <AccountContainer>
         <AuthInput
           label="E-mail"
@@ -44,6 +46,9 @@ export const LoginScreen = () => {
           Login
         </AuthButton>
       </AccountContainer>
+      <BackButton mode="contained" onPress={() => navigation.goBack()}>
+        Back
+      </BackButton>
     </AccountBackground>
   );
 };

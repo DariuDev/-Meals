@@ -10,7 +10,11 @@ export const AccountBackground = styled.ImageBackground.attrs({
   align-items: center;
   justify-content: center;
 `;
-
+export const Title = styled(Text)`
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
 export const AccountCover = styled(View)`
   position: absolute;
   height: 100%;
@@ -21,14 +25,23 @@ export const AccountContainer = styled(View)`
   justify-content: center;
   align-items: center;
   padding: 10%;
+  margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.8);
 `;
 export const AuthButton = styled(Button).attrs({
   color: 'blue',
 })`
   margin: 1%;
-  width: 250px;
+  width: 200px;
   padding: 5px;
+`;
+export const BackButton = styled(Button).attrs({
+  color: 'blue',
+})`
+  margin: 1%;
+  width: 100px;
+  padding: 5px;
+  margin-top: 10px;
 `;
 export const AuthInput = styled(TextInput)`
   height: 60px;
@@ -36,5 +49,6 @@ export const AuthInput = styled(TextInput)`
   margin: 1%;
 `;
 export const ErrorText = styled(Text)`
+  margin: 1%;
   color: red;
 `;
