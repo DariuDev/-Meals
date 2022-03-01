@@ -1,8 +1,11 @@
 import React, {useContext, useState} from 'react';
-import {FlatList, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {ActivityIndicator} from 'react-native-paper';
 import {RestaurantsComponent} from '../components/RestaurantsComponent';
-import {ActivityIndicatorContainer} from './RestaurantStylesScreen';
+import {
+  ActivityIndicatorContainer,
+  RestaurantList,
+} from './RestaurantStylesScreen';
 import {SafeArea} from '../../../components/utility/SafeArea';
 import {FavouritesBar} from '../../../components/favourites/FavouritesBarComponent';
 import {RestaurantsContext} from '../../../services/restaurants/RestaurantsContext';
@@ -30,7 +33,7 @@ export const RestaurantsScreen = ({navigation}) => {
           onNavigate={navigation.navigate}
         />
       )}
-      <FlatList
+      <RestaurantList
         data={restaurants}
         renderItem={({item}) => {
           return (
