@@ -14,7 +14,6 @@ export const AuthenticationContextProvider = ({children}) => {
       if (usr) {
         setUser(usr);
         setIsLoading(false);
-        console.log('onAuthStateChanged', usr);
       } else {
         setIsLoading(false);
       }
@@ -27,8 +26,6 @@ export const AuthenticationContextProvider = ({children}) => {
       .then(() => {
         setUser(email);
         setIsLoading(false);
-        console.log(email, 'user1');
-        console.log(password, 'password1');
       })
       .catch(e => {
         setError(e.toString());

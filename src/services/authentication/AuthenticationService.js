@@ -10,9 +10,9 @@ export const registerRequest = async (email, password, repeatedPassword) => {
     repeatedPassword,
   );
 };
-export const onAuthentiactionStateChange = async usr => {
-  auth().onAuthStateChanged(usr);
-};
-export const signOut = async () => {
-  await auth.signOut();
-};
+// export const onAuthentiactionStateChange = async usr => {
+//   auth().onAuthStateChanged(usr);
+// };
+// export const signOut = async () => {
+//   await auth.signOut();
+// };
