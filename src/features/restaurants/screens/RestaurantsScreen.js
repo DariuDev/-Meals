@@ -11,6 +11,7 @@ import {FavouritesBar} from '../../../components/favourites/FavouritesBarCompone
 import {RestaurantsContext} from '../../../services/restaurants/RestaurantsContext';
 import {FavouritesContext} from '../../../services/favourites/FavouritesContext';
 import {SearchComponent} from '../components/SearchComponent';
+import {FadeInView} from '../../../components/animations/FadeAnimation';
 
 export const RestaurantsScreen = ({navigation}) => {
   const {restaurants, isLoading} = useContext(RestaurantsContext);
@@ -43,7 +44,9 @@ export const RestaurantsScreen = ({navigation}) => {
                   restaurant: item,
                 })
               }>
-              <RestaurantsComponent restaurant={item} />
+              <FadeInView>
+                <RestaurantsComponent restaurant={item} />
+              </FadeInView>
             </TouchableOpacity>
           );
         }}
