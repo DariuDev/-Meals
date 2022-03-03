@@ -67,19 +67,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {View, TouchableOpacity, Text} from 'react-native';
 
 import {AuthenticationContext} from '../../../services/authentication/AuthenticationContext';
+import { useCamera } from 'react-native-camera-hooks';
 const PendingView = () => (
   <PendingViewContainer>
     <Text>Waiting</Text>
   </PendingViewContainer>
 );
-const ProfileCamera = styled(RNCamera)`
-  width: 100%;
-  height: 100%;
-`;
 
 export const CameraScreen = ({navigation}) => {
-  const [hasPermission, setHasPermission] = useState(null);
-  const cameraRef = useRef();
+  const cameraRef = useCamera();
   const {user} = useContext(AuthenticationContext);
 
   const snap = async () => {
@@ -98,10 +94,10 @@ export const CameraScreen = ({navigation}) => {
   }, []);
 
   return (
-    <TouchableOpacity onPress={snap}>
+    <SnapContainer onPress={() => snap()}>
       <RNCameraContainer
         type={RNCamera.Constants.Type.back}
-        ref={camera => (cameraRef.current = camera)}
+        ref={cameraRef}
         flashMode={RNCamera.Constants.FlashMode.on}
         androidCameraPermissionOptions={{
           title: 'Permission to use camera',
@@ -121,6 +117,6 @@ export const CameraScreen = ({navigation}) => {
           }
         }}
       </RNCameraContainer>
-    </TouchableOpacity>
+    </SnapContainer>
   );
 };
